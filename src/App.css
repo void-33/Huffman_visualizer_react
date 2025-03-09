@@ -1,58 +1,46 @@
-/* App.css */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    background-color: #f4f4f4;
-  }
-  
-  .container {
-    display: flex;
-    justify-content: space-between;
-    height: 100vh; /* Full viewport height */
-    padding: 20px;
-    box-sizing: border-box;
-  }
-  
-  .left-section {
-    width: 48%;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    overflow-y: auto; /* Add scroll if content overflows */
-  }
-  
-  .right-section {
-    width: 48%;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    box-sizing: border-box;
-  }
-  
-  .placeholder {
-    text-align: center;
-    color: #666;
-    font-size: 16px;
-  }
-  
-  textarea {
-    margin-bottom: 20px;
-    padding: 10px;
-    font-size: 14px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    width: 100%;
-    box-sizing: border-box;
-  }
-  
-  h1, h2 {
-    margin-bottom: 10px;
-    color: #333;
-  }
+.container {
+  display: flex;
+  padding: 20px;
+}
+
+.left-section {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.right-section {
+  flex: 1;
+}
+
+.mode-toggle {
+  margin-bottom: 20px;
+}
+
+.mode-toggle button {
+  padding: 10px 20px;
+  margin-right: 10px;
+  cursor: pointer;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 5px;
+}
+
+.mode-toggle button:hover {
+  background-color: #0056b3;
+}
+
+textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.placeholder {
+  text-align: center;
+  color: #888;
+  font-size: 18px;
+  margin-top: 20px;
+}
