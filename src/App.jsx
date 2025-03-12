@@ -52,17 +52,26 @@ const App = () => {
     setHuffmanEncodedString('');
   };
 
+  const removeFreqandShortenKeys = (node) => {
+    if (!node) return null;
+    const { char, left, right } = node;
+    return {
+      ...(char !== null && { c:char }), //only keeps c:'char' if char is not null
+      ...(left && { l: removeFreqandShortenKeys(left) }),
+      ...(right && { r: removeFreqandShortenKeys(right) }),
+    };
+  };
+
   const saveTreeToFile = () => {
     if (!treeRoot) {
       alert('No Huffman tree to save!');
       return;
     }
 
-    const dataToSave = {
-      tree: treeRoot,
-    };
+    const refactoredTree = removeFreqandShortenKeys(treeRoot);
 
-    const json = JSON.stringify(dataToSave, null, 2);
+
+    const json = JSON.stringify(refactoredTree);
     const blob = new Blob([json], { type: 'application/json' });
     const url = URL.createObjectURL(blob);
 

@@ -51,16 +51,15 @@ export function decodeData(encodedData, root) {
 
   for (let bit of encodedData) {
     if (bit === '0') {
-      currentNode = currentNode.left;
+      currentNode = currentNode.l;
     } else if (bit === '1') {
-      currentNode = currentNode.right;
+      currentNode = currentNode.r;
     }
 
-    if (currentNode.char !== null) {
-      decodedText += currentNode.char;
+    if (currentNode.c) {
+      decodedText += currentNode.c;
       currentNode = root;
     }
   }
-
   return decodedText;
 }

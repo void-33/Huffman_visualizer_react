@@ -15,14 +15,13 @@ const Decoder = () => {
     reader.onload = (event) => {
       try {
         const data = JSON.parse(event.target.result);
-        const { tree } = data;
 
-        if (!tree) {
+        if (!data || !data.l || !data.r) {
           setError('Invalid file format. Missing Huffman tree.');
           return;
         }
 
-        setUploadedTree(tree);
+        setUploadedTree(data);
         setError('');
       } catch (err) {
         setError('Failed to parse the file. Please ensure it is a valid JSON file.');
